@@ -1,0 +1,74 @@
+<!-- import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-city-form',
+  template: `
+    <form>
+      <label>
+        City:
+        <input type="text" name="city" [(ngModel)]="city">
+      </label>
+      <br>
+      <label>
+        Country:
+        <input type="text" name="country" [(ngModel)]="country">
+      </label>
+      <br>
+      <label>
+        Population:
+        <input type="number" name="population" [(ngModel)]="population">
+      </label>
+      <br>
+      <button type="submit" (click)="save()">Save</button>
+    </form>
+    <br>
+    <label>
+      Search:
+      <input type="text" name="search" [(ngModel)]="search" (keyup)="searchData()">
+    </label>
+    <br>
+    <table>
+      <tr>
+        <th>City</th>
+        <th>Country</th>
+        <th>Population</th>
+      </tr>
+      <tr *ngFor="let data of searchResults">
+        <td>{{ data.city }}</td>
+        <td>{{ data.country }}</td>
+        <td>{{ data.population }}</td>
+      </tr>
+    </table>
+  `,
+  styleUrls: ['./city-form.component.css']
+})
+export class CityFormComponent implements OnInit {
+  city: string;
+  country: string;
+  population: number;
+  search: string;
+  data: any[] = [];
+  searchResults: any[] = [];
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.data = JSON.parse(localStorage.getItem('data')) || [];
+  }
+
+  save(): void {
+    this.data.push({ city: this.city, country: this.country, population: this.population });
+    localStorage.setItem('data', JSON.stringify(this.data));
+  }
+
+  searchData(): void {
+    this.searchResults = this.data.filter((item) => {
+      return item.city.toLowerCase().includes(this.search.toLowerCase()) ||
+        item.country.toLowerCase().includes(this.search.toLowerCase()) ||
+        item.population.toString().includes(this.search);
+    });
+  }
+} -->
+
+<script>var exports = {"__esModule" : { value: true }} </script>
+<script src="./index.js"></script>
